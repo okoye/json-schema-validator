@@ -268,7 +268,7 @@ class Validator(object):
                         obj=obj),
                     "Object is not a string representing JSON date-time",
                     schema_suffix=".format")
-        if fmt == 'regex'
+        if fmt == 'regex':
             try:
                 re.compile(obj)
             except:
