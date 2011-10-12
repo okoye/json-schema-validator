@@ -23,7 +23,7 @@ Validator implementation
 import datetime
 import itertools
 import types
-
+import re
 from json_schema_validator.errors import ValidationError
 from json_schema_validator.misc import NUMERIC_TYPES
 from json_schema_validator.schema import Schema
@@ -239,6 +239,8 @@ class Validator(object):
         ptn = self._schema.pattern
         obj = self._object
         
+        if ptn is None:
+          return
         if not isinstance(obj, basestring):
             return
         
