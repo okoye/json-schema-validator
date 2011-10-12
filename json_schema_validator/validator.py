@@ -239,7 +239,7 @@ class Validator(object):
         ptn = self._schema.pattern
         obj = self._object
         
-        if not isinstance(obj, string):
+        if not isinstance(obj, basestring):
             return
         
         if re.match(ptn,obj):
